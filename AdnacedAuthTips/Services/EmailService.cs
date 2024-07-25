@@ -8,15 +8,14 @@ namespace AdnacedAuthTips.Services
     {
         public Task<bool> SendEmailAsync(string from ,string email,string subject, string body)
         {
-            string senderEmail = "alialhadiabokhalil@outlook.com"; // Replace with your Outlook email address
-            string senderPassword = "Asp.net_c#123"; // Replace with your Outlook email password
+          
 
-            // Recipient's email address
+            
             string recipientEmail = email;
 
-            // Outlook SMTP server address and port
+            
             string smtpServer = "smtp.office365.com";
-            int smtpPort = 587; // Outlook SMTP port (TLS)
+            int smtpPort = 587; 
 
             try
             {
@@ -31,8 +30,8 @@ namespace AdnacedAuthTips.Services
                     // Create email message
                     using (var message = new MailMessage(senderEmail, recipientEmail))
                     {
-                        message.Subject = "Forgot Reset Password using al5aaaaaaaaaaaal smtp !!!!!!";
-                        message.Body = $"To reset your password please click on the link below {link} ";
+                        message.Subject = "Email Confirmation";
+                        message.Body = $"{code}";
                         message.IsBodyHtml = false;
 
                         // Send email
